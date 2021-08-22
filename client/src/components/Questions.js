@@ -25,7 +25,7 @@ const Questions= () => {
 
     return (
         <>
-        <table className="table mt-5">
+        <table className="table mt-3">
             <thead>
             <tr>
                 <th>Questions</th>
@@ -35,7 +35,7 @@ const Questions= () => {
             <tbody>
             {question.map(que => (
                 <tr key={que.question_id}>
-                    <td>{count++}{")"} {que.questions}<RadioResponse /></td>
+                    <td><strong>{count++}{")"} {que.questions}</strong><RadioResponse /></td>
                 </tr>
             ))}
             </tbody>

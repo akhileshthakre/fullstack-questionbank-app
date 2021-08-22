@@ -7,9 +7,18 @@ const RadioResponse = () => {
     const [option3, setOption3] = useState([])
     const [option4, setOption4] = useState([])
 
+    // const options = () => {
+    //     axios.get("http://localhost:5000/options").then((response) => {
+    //         setOption1(response.data.map((data) => data.option_1))
+    //         setOption2(response.data.map((data) => data.option_2 ))
+    //         setOption3(response.data.map((data) => data.option_3 ))
+    //         setOption4(response.data.map((data) => data.option_4 ))
+    //     })
+    // }
+
     useEffect(() => {
         axios.get("http://localhost:5000/options").then((response) => {
-            setOption1(response.data.map((data) => data.option_1 ))
+            setOption1(response.data.map((data) => data.option_1))
             setOption2(response.data.map((data) => data.option_2 ))
             setOption3(response.data.map((data) => data.option_3 ))
             setOption4(response.data.map((data) => data.option_4 ))
@@ -17,9 +26,10 @@ const RadioResponse = () => {
     },[])
 
     return (
-        <div className="container table mt-5">
+        <div className="container table mt-2">
+            {/* {options()} */}
             <div className="radio">
-                <label><input type="radio" name="optradio" ></input>{" "}{option1}</label>
+                <label><input type="radio" name="optradio" ></input>{" "} {option1}</label>
             </div>
             <div className="radio">
                 <label><input type="radio" name="optradio" ></input>{" "} {option2}</label>
